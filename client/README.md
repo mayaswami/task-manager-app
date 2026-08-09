@@ -1,16 +1,28 @@
-# React + Vite
+# Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A task management application built with React and Redux Toolkit, with backend integration (Node.js, Express, MongoDB) planned as the next phase.
 
-Currently, two official plugins are available:
+## Features
+- Add, edit, and delete tasks
+- Mark tasks as complete/incomplete
+- Filter tasks by category and priority
+- Search functionality
+- Persistent state using Redux Toolkit + localStorage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- Frontend: React (Vite), Redux Toolkit, Tailwind CSS
+- Backend (planned): Node.js, Express, MongoDB
 
-## React Compiler
+## Status
+🚧 In development — frontend and state management complete, backend integration in progress.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+```bash
+cd client
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Author
+Maya Swami — [GitHub](https://github.com/mayaswami)
