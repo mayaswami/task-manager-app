@@ -1,8 +1,12 @@
-function App() {
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
 
+function App() {
   return (
     <>
-      <h1>new</h1>
+    <h1>Task Manager</h1>
+    <TaskForm />
+    <TaskList />
     </>
   )
 }
