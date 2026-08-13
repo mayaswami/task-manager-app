@@ -8,17 +8,27 @@ function TaskList() {
   const [editingTask, setEditingTask] = useState(null);
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [priorityFilter, setPriorityFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredTasks = tasks.filter((task) => {
     const categoryMatch =
       categoryFilter === "All" || task.category === categoryFilter;
     const priorityMatch =
       priorityFilter === "All" || task.priority === priorityFilter;
-    return categoryMatch && priorityMatch;
+    const searchMatch =
+      searchTerm === "" || task.title.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return categoryMatch && priorityMatch && searchMatch;
   });
 
   return (
     <div>
+      <input
+        type="text"
+        placeholder="Search tasks..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <div>
         <select
           value={categoryFilter}
