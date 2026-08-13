@@ -7,8 +7,8 @@ A task management application built with React and Redux Toolkit, with backend i
 - ✅ Delete tasks
 - ✅ Mark tasks as complete/incomplete
 - ✅ Persistent state using Redux Toolkit + localStorage
-- ⬜ Edit tasks
-- ⬜ Filter tasks by category and priority
+- ✅ Edit tasks
+- ✅ Filter tasks by category and priority
 - ⬜ Search functionality
 - ⬜ Tailwind CSS styling
 
@@ -18,8 +18,7 @@ A task management application built with React and Redux Toolkit, with backend i
 - Backend (planned): Node.js, Express, MongoDB
 
 ## Status
-🚧 In development — frontend and state management complete, backend integration in progress.
-
+🚧 In development — core task management (add, delete, edit, filter, toggle) working with Redux Toolkit and localStorage. Styling and backend integration in progress.
 ## Getting Started
 
 ```bash

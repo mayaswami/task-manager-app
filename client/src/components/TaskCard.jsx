@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteTask, toggleComplete } from "../features/tasks/tasksSlice";
 
-function TaskCard({ task }) {
+function TaskCard({ task, onEdit }) {
   const dispatch = useDispatch();
 
   return (
@@ -15,8 +15,10 @@ function TaskCard({ task }) {
       <button onClick={() => dispatch(toggleComplete(task.id))}>
         {task.completed ? "Mark Incomplete" : "Mark Complete"}
       </button>
+      <button onClick={() => onEdit(task)}>Edit</button>
       <button onClick={() => dispatch(deleteTask(task.id))}>Delete</button>
     </div>
   );
 }
+
 export default TaskCard;
