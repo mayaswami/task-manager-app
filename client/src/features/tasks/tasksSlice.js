@@ -15,16 +15,12 @@ const tasksSlice = createSlice({
             state.list = state.list.filter((task) => task.id !== action.payload);
         },
         toggleComplete: (state, action) => {
-            const task = state.list.find((t) => t.id === action.payload);
-            if (task) {
-                task.completed = !task.completed;
-            }
+            const task = state.list.find((task) => task.id === action.payload);
+            if (task) task.completed = !task.completed;
         },
         editTask: (state, action) => {
-           const index = state.list.findIndex((task) => task.id === action.payload.id);
-           if (index !== -1) {
-               state.list[index] = action.payload;
-           }
+            const index = state.list.findIndex((task) => task.id === action.payload.id);
+            if (index !== -1) state.list[index] = action.payload;
         },
     },
 });

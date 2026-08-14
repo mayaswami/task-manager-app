@@ -10,15 +10,15 @@ A task management application built with React and Redux Toolkit, with backend i
 - ✅ Edit tasks
 - ✅ Filter tasks by category and priority
 - ✅ Search functionality
-- ⬜ Tailwind CSS styling
-
+- ✅ Tailwind CSS styling
 
 ## Tech Stack
 - Frontend: React (Vite), Redux Toolkit, Tailwind CSS
 - Backend (planned): Node.js, Express, MongoDB
 
 ## Status
-🚧 In development — core task management (add, delete, edit, filter, toggle, search) working with Redux Toolkit and localStorage. Styling and backend integration in progress.
+🚧 In development — core task management (add, delete, edit, filter, toggle, search) working with Redux Toolkit and localStorage. UI styled with Tailwind CSS. Backend integration in progress.
+
 ## Getting Started
 
 ```bash

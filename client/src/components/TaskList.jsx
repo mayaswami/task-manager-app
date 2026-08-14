@@ -15,39 +15,45 @@ function TaskList() {
       categoryFilter === "All" || task.category === categoryFilter;
     const priorityMatch =
       priorityFilter === "All" || task.priority === priorityFilter;
-    const searchMatch =
-      searchTerm === "" || task.title.toLowerCase().includes(searchTerm.toLowerCase());
-
+    const searchMatch = task.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     return categoryMatch && priorityMatch && searchMatch;
   });
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search tasks..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <div>
-        <select
-          value={categoryFilter}
-          onChange={(e) => setCategoryFilter(e.target.value)}
-        >
-          <option value="All">All Categories</option>
-          <option value="Work">Work</option>
-          <option value="Personal">Personal</option>
-          <option value="Study">Study</option>
-        </select>
-        <select
-          value={priorityFilter}
-          onChange={(e) => setPriorityFilter(e.target.value)}
-        >
-          <option value="All">All Priorities</option>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
+      <div className="bg-white p-4 rounded-lg shadow mb-4">
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full border border-gray-300 rounded px-3 py-2 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+
+        <div className="flex gap-3">
+          <select
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value)}
+            className="border border-gray-300 rounded px-3 py-2 text-sm flex-1"
+          >
+            <option value="All">All Categories</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Study">Study</option>
+          </select>
+          <select
+            value={priorityFilter}
+            onChange={(e) => setPriorityFilter(e.target.value)}
+            className="border border-gray-300 rounded px-3 py-2 text-sm flex-1"
+          >
+            <option value="All">All Priorities</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
       </div>
 
       {editingTask && (
@@ -58,11 +64,15 @@ function TaskList() {
       )}
 
       {filteredTasks.length === 0 ? (
-        <p>No tasks match this filter.</p>
+        <p className="text-gray-500 text-sm text-center py-6">
+          No tasks match this filter.
+        </p>
       ) : (
-        filteredTasks.map((task) => (
-          <TaskCard key={task.id} task={task} onEdit={setEditingTask} />
-        ))
+        <div className="flex flex-col gap-3">
+          {filteredTasks.map((task) => (
+            <TaskCard key={task.id} task={task} onEdit={setEditingTask} />
+          ))}
+        </div>
       )}
     </div>
   );
