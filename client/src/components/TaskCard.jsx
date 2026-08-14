@@ -5,7 +5,7 @@ function TaskCard({ task, onEdit }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow flex items-center justify-between">
+    <div className="bg-white p-4 rounded-lg shadow flex flex-col sm:flex-row sm:items-center justify-between gap-3">
       <div>
         <h3
           className={`font-medium ${task.completed ? "line-through text-gray-400" : "text-gray-800"}`}
